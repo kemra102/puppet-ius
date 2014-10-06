@@ -161,7 +161,7 @@ class ius (
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Dev",
     }
 
-    yumrepo { 'ius-dev-debug':
+    yumrepo { 'ius-dev-debuginfo':
       baseurl             => $ius_dev_debug_baseurl,
       failovermethod      => $ius_dev_debug_failovermethod,
       proxy               => $ius_dev_debug_proxy,
@@ -191,7 +191,7 @@ class ius (
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Testing",
     }
 
-    yumrepo { 'ius-testing-debug':
+    yumrepo { 'ius-testing-debuginfo':
       baseurl             => $ius_testing_debug_baseurl,
       failovermethod      => $ius_testing_debug_failovermethod,
       proxy               => $ius_testing_debug_proxy,
@@ -221,7 +221,7 @@ class ius (
 
     ius::rpm_gpg_key{ 'IUS-COMMUNITY-GPG-KEY':
       path	=> '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
-      before	=> Yumrepo['ius', 'ius-debug', 'ius-source', 'ius-archive', 'ius-archive-debug', 'ius-archive-source', 'ius-dev', 'ius-dev-debug', 'ius-dev-source', 'ius-testing', 'ius-testing-debug', 'ius-testing-source'],
+      before	=> Yumrepo['ius', 'ius-debuginfo', 'ius-source', 'ius-archive', 'ius-archive-debuginfo', 'ius-archive-source', 'ius-dev', 'ius-dev-debuginfo', 'ius-dev-source', 'ius-testing', 'ius-testing-debuginfo', 'ius-testing-source'],
     }
   } else {
     notice ("Your operating system ${::operatingsystem} will not have the IUS repository applied")
