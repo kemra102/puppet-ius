@@ -1,0 +1,4 @@
+# Temp files
+*.swp
+# Puppet package directory
+pkg/
