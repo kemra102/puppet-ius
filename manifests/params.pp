@@ -15,7 +15,7 @@ class ius::params {
       $ius_os = 'el'
     }
     default: {
-      fail("${::operatingsystem} is not supported by this module.")
+      notice("${::operatingsystem} is not supported by this module.")
     }
   }
 
