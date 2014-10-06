@@ -18,9 +18,9 @@ The IUS Community Project is a brain child of the RPM Development Team at Racksp
 
 Updates for existing packages, as well as new packages, will be made available to the community first during a ‘testing’ stage. We give it some time to bake and allow IUS users to test the packages out and submit bug reports if necessary. After testing, those packages will join the IUS ‘stable’ repository. For new packages, we require the requester to do some testing and give feedback before we will push a package into the stable repository. For updates, we allow two weeks for feedback before pushing package into the stable repository. Updates that contain fixes for CVEs will get pushed into the stable repository sooner. We want to make sure that the the community has given some time to test the update, but also want to push the update in a timely fashion.
 
-IUS Community is run by full time Linux Engineers employed by Rackspace, therefore making the project ‘Sponsored by Rackspace’. That said, IUS is not a service of Rackspace. That means: It’s free! (And unsupported!) Please read the [http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA](End User Agreement). Support for IUS users can be found within our [http://launchpad.net/~ius-community](mailing lists) and [http://bugs.launchpad.net/ius](bug tracking system).
+IUS Community is run by full time Linux Engineers employed by Rackspace, therefore making the project ‘Sponsored by Rackspace’. That said, IUS is not a service of Rackspace. That means: It’s free! (And unsupported!) Please read the [End User Agreement](http://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-EUA). Support for IUS users can be found within our [mailing lists](http://launchpad.net/~ius-community) and [bug tracking system](http://bugs.launchpad.net/ius).
 
-The IUS Community Project is also SafeRepo Aware, see [https://iuscommunity.org/pages/TheSafeRepoInitiative.html](The SafeRepo Initiative).
+The IUS Community Project is also SafeRepo Aware, see [The SafeRepo Initiative](https://iuscommunity.org/pages/TheSafeRepoInitiative.html).
 
 ##Module Description
 
