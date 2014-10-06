@@ -97,7 +97,7 @@ class ius (
       proxy 		=> $ius_proxy,
       enabled 		=> $ius_enabled,
       gpgcheck 		=> $ius_gpgcheck,
-      gpgkey 		=> '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey 		=> 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr 		=> "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
     }
 
@@ -107,7 +107,7 @@ class ius (
       proxy               => $ius_debuginfo_proxy,
       enabled             => $ius_debuginfo_enabled,
       gpgcheck            => $ius_debuginfo_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Debug",
     }
 
@@ -117,7 +117,7 @@ class ius (
       proxy               => $ius_proxy,
       enabled             => $ius_enabled,
       gpgcheck            => $ius_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
     }
 
@@ -127,7 +127,7 @@ class ius (
       proxy               => $ius_archive_proxy,
       enabled             => $ius_archive_enabled,
       gpgcheck            => $ius_archive_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Archive",
     }
 
@@ -137,7 +137,7 @@ class ius (
       proxy               => $ius_archive_debuginfo_proxy,
       enabled             => $ius_archive_debuginfo_enabled,
       gpgcheck            => $ius_archive_debuginfo_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Archive Debug",
     }
 
@@ -147,7 +147,7 @@ class ius (
       proxy               => $ius_archive_source_proxy,
       enabled             => $ius_archive_source_enabled,
       gpgcheck            => $ius_archive_source_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Archive Source",
     }
 
@@ -157,7 +157,7 @@ class ius (
       proxy               => $ius_dev_proxy,
       enabled             => $ius_dev_enabled,
       gpgcheck            => $ius_dev_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Dev",
     }
 
@@ -167,7 +167,7 @@ class ius (
       proxy               => $ius_dev_debug_proxy,
       enabled             => $ius_dev_debug_enabled,
       gpgcheck            => $ius_dev_debug_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Dev Debug",
     }
 
@@ -177,7 +177,7 @@ class ius (
       proxy               => $ius_dev_source_proxy,
       enabled             => $ius_dev_source_enabled,
       gpgcheck            => $ius_dev_source_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Dev Source",
     }
 
@@ -187,7 +187,7 @@ class ius (
       proxy               => $ius_testing_proxy,
       enabled             => $ius_testing_enabled,
       gpgcheck            => $ius_testing_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Testing",
     }
 
@@ -197,7 +197,7 @@ class ius (
       proxy               => $ius_testing_debug_proxy,
       enabled             => $ius_testing_debug_enabled,
       gpgcheck            => $ius_testing_debug_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Testing Debug",
     }
 
@@ -207,7 +207,7 @@ class ius (
       proxy               => $ius_testing_source_proxy,
       enabled             => $ius_testing_source_enabled,
       gpgcheck            => $ius_testing_source_gpgcheck,
-      gpgkey              => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey              => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
       descr               => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Testing Source",
     }
 
@@ -219,8 +219,9 @@ class ius (
       source 	=> 'puppet:///modules/ius/IUS-COMMUNITY-GPG-KEY',
     }
 
-    ius::rpm_gpg_key{ "/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY":
-      before => Yumrepo['ius', 'ius-debug', 'ius-source', 'ius-archive', 'ius-archive-debug', 'ius-archive-source', 'ius-dev', 'ius-dev-debug', 'ius-dev-source', 'ius-testing', 'ius-testing-debug', 'ius-testing-source'],
+    ius::rpm_gpg_key{ 'IUS-COMMUNITY-GPG-KEY':
+      path	=> '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      before	=> Yumrepo['ius', 'ius-debug', 'ius-source', 'ius-archive', 'ius-archive-debug', 'ius-archive-source', 'ius-dev', 'ius-dev-debug', 'ius-dev-source', 'ius-testing', 'ius-testing-debug', 'ius-testing-source'],
     }
   } else {
     notice ("Your operating system ${::operatingsystem} will not have the IUS repository applied")
