@@ -170,7 +170,7 @@ class ius (
 
     yumrepo { 'ius-dev-debuginfo':
       baseurl             => $ius_dev_debuginfo_baseurl,
-      mirrorlist	  => $ius_dev_debuginfo_mirrorlist
+      mirrorlist	  => $ius_dev_debuginfo_mirrorlist,
       failovermethod      => $ius_dev_debuginfo_failovermethod,
       proxy               => $ius_dev_debuginfo_proxy,
       enabled             => $ius_dev_debuginfo_enabled,
