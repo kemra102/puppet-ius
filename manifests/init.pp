@@ -91,6 +91,9 @@ class ius (
 ) inherits ius::params {
 
   if $::osfamily == 'RedHat' and $::operatingsystem =~ /RedHat|CentOS/ {
+    
+    include ::epel
+
     yumrepo { 'ius':
       baseurl 		=> $ius_baseurl,
       mirrorlist	=> $ius_mirrorlist,

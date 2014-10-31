@@ -4,10 +4,9 @@
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [EPEL] (#epel)
-4. [Setup - The basics of getting started with ius](#setup)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+3. [Setup - The basics of getting started with ius](#setup)
+4. [Limitations - OS compatibility, etc.](#limitations)
+5. [Development - Guide for contributing to the module](#development)
 
 ##Overview
 
@@ -27,17 +26,12 @@ The IUS Community Project is also SafeRepo Aware, see [The SafeRepo Initiative](
 
 This module sets up the IUS Community repo on RedHat & CentOS systems.
 
-##EPEL
-
-Many of the packages in IUS require EPEL to be available on the system. This module does not ensure that, so you can ensure it is installed by your preferred method.
-
-This module author recommends [stahnma-epel](https://forge.puppetlabs.com/stahnma/epel) on [Puppet Forge](https://forge.puppetlabs.com/) for this purpose.
-
 ##Setup
 
 ###What ius affects
 
 * IUS Repo files in '/etc/yum.repos.d'
+* EPEL via stahnma/epel
 
 ###Beginning with ius
 
