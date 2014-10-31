@@ -55,7 +55,7 @@ This module has been tested against the latest version of Puppet from the Puppet
 
 The module has been tested on:
 
-* CentOS 6.5/7.0
+* CentOS 6.6/7.0
 
 This module should also work fine on:
 
