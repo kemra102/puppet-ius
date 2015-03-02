@@ -1,0 +1,7 @@
+v1.0.0:
+  - Require stahnma/epel.
+  - EL7 support tested.
+
+v1.0.1:
+  - Puppet lint updates.
+  - Pupept Labs scroign quality updates.
