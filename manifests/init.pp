@@ -13,7 +13,7 @@
 class ius (
 
   $ius_mirrorlist                       = $ius::params::ius_mirrorlist,
-  $ius_baseurl        = $ius::params::ius_baseurl,
+  $ius_baseurl                          = $ius::params::ius_baseurl,
   $ius_failovermethod                   = $ius::params::ius_failovermethod,
   $ius_proxy                            = $ius::params::ius_proxy,
   $ius_enabled                          = $ius::params::ius_enabled,
@@ -39,7 +39,7 @@ class ius (
   $ius_archive_gpgcheck                 = $ius::params::ius_archive_gpgcheck,
   $ius_archive_debuginfo_mirrorlist     = $ius::params::ius_archive_debuginfo_mirrorlist,
   $ius_archive_debuginfo_baseurl        = $ius::params::ius_archive_debuginfo_baseurl,
-  $ius_archive_debuginfo_failovermethod  = $ius::params::ius_archive_debuginfo_failovermethod,
+  $ius_archive_debuginfo_failovermethod = $ius::params::ius_archive_debuginfo_failovermethod,
   $ius_archive_debuginfo_proxy          = $ius::params::ius_archive_debuginfo_proxy,
   $ius_archive_debuginfo_enabled        = $ius::params::ius_archive_debuginfo_enabled,
   $ius_archive_debuginfo_gpgcheck       = $ius::params::ius_archive_debuginfo_gpgcheck,
@@ -67,7 +67,7 @@ class ius (
   $ius_dev_source_failovermethod        = $ius::params::ius_dev_source_failovermethod,
   $ius_dev_source_proxy                 = $ius::params::ius_dev_source_proxy,
   $ius_dev_source_enabled               = $ius::params::ius_dev_source_enabled,
-  $ius_dev_source_gpgcheck               = $ius::params::ius_dev_source_gpgcheck,
+  $ius_dev_source_gpgcheck              = $ius::params::ius_dev_source_gpgcheck,
 
   $ius_testing_mirrorlist               = $ius::params::ius_testing_mirrorlist,
   $ius_testing_baseurl                  = $ius::params::ius_testing_baseurl,
@@ -86,13 +86,15 @@ class ius (
   $ius_testing_source_failovermethod    = $ius::params::ius_testing_source_failovermethod,
   $ius_testing_source_proxy             = $ius::params::ius_testing_source_proxy,
   $ius_testing_source_enabled           = $ius::params::ius_testing_source_enabled,
-  $ius_testing_source_gpgcheck    = $ius::params::ius_testing_source_gpgcheck,
+  $ius_testing_source_gpgcheck          = $ius::params::ius_testing_source_gpgcheck,
+
+  $epel_class                           = $ius::params::epel_class,
 
 ) inherits ius::params {
 
   if $::osfamily == 'RedHat' and $::operatingsystem =~ /RedHat|CentOS/ {
     
-    include ::epel
+    include $epel_class
 
     yumrepo { 'ius':
       baseurl        => $ius_baseurl,

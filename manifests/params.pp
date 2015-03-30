@@ -19,12 +19,12 @@ class ius::params {
     }
   }
 
-  $ius_mirrorlist      = "http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-${ius_os}${::operatingsystemmajrelease}&arch=\$basearch"
-  $ius_baseurl        = 'absent'
-  $ius_failovermethod       = 'priority'
-  $ius_proxy         = $proxy
-  $ius_enabled         = '1'
-  $ius_gpgcheck       = '1'
+  $ius_mirrorlist                       = "http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-${ius_os}${::operatingsystemmajrelease}&arch=\$basearch"
+  $ius_baseurl                          = 'absent'
+  $ius_failovermethod                   = 'priority'
+  $ius_proxy                            = $proxy
+  $ius_enabled                          = '1'
+  $ius_gpgcheck                         = '1'
   $ius_debuginfo_mirrorlist             = "http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-${ius_os}${::operatingsystemmajrelease}-debuginfo&arch=\$basearch"
   $ius_debuginfo_baseurl                = 'absent'
   $ius_debuginfo_failovermethod         = 'priority'
@@ -46,7 +46,7 @@ class ius::params {
   $ius_archive_gpgcheck                 = '1'
   $ius_archive_debuginfo_mirrorlist     = "http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-${ius_os}${::operatingsystemmajrelease}-archive-debuginfo&arch=\$basearch"
   $ius_archive_debuginfo_baseurl        = 'absent'
-  $ius_archive_debuginfo_failovermethod  = 'priority'
+  $ius_archive_debuginfo_failovermethod = 'priority'
   $ius_archive_debuginfo_proxy          = $proxy
   $ius_archive_debuginfo_enabled        = '0'
   $ius_archive_debuginfo_gpgcheck       = '1'
@@ -55,7 +55,7 @@ class ius::params {
   $ius_archive_source_failovermethod    = 'priority'
   $ius_archive_source_proxy             = $proxy
   $ius_archive_source_enabled           = '0'
-  $ius_archive_source_gpgcheck           = '1'
+  $ius_archive_source_gpgcheck          = '1'
 
   $ius_dev_mirrorlist                 = "http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-${ius_os}${::operatingsystemmajrelease}-dev&arch=\$basearch"
   $ius_dev_baseurl                    = 'absent'
@@ -74,7 +74,7 @@ class ius::params {
   $ius_dev_source_failovermethod      = 'priority'
   $ius_dev_source_proxy               = $proxy
   $ius_dev_source_enabled             = '0'
-  $ius_dev_source_gpgcheck           = '1'
+  $ius_dev_source_gpgcheck            = '1'
 
   $ius_testing_mirrorlist               = "http://dmirr.iuscommunity.org/mirrorlist/?repo=ius-${ius_os}${::operatingsystemmajrelease}-testing&arch=\$basearch"
   $ius_testing_baseurl                  = 'absent'
@@ -93,6 +93,8 @@ class ius::params {
   $ius_testing_source_failovermethod    = 'priority'
   $ius_testing_source_proxy             = $proxy
   $ius_testing_source_enabled           = '0'
-  $ius_testing_source_gpgcheck           = '1'
+  $ius_testing_source_gpgcheck          = '1'
+
+  $epel_class                           = ::epel
 
 }
