@@ -46,7 +46,26 @@ In Hiera:
 ```yaml
 ---
 classes:
-	- ius
+  - ius
+```
+
+###Using a differant EPEL module
+
+If you use an EPEL module other than stahnma-epel you can change it:
+
+```puppet
+class { '::ius':
+  epel_class => '::yum::repo::epel',
+}
+```
+
+or in Hiera:
+
+```yaml
+---
+classes:
+  - ius
+ius::epel_class: '::yum::repo::epel'
 ```
 
 ##Limitations

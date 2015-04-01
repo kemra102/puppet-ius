@@ -4,4 +4,7 @@ v1.0.0:
 
 v1.0.1:
   - Puppet lint updates.
-  - Pupept Labs scroign quality updates.
+  - Pupept Labs scoring quality updates.
+
+v1.1.0:
+  - Can now specify EPEL repo module to be used.

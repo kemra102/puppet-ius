@@ -1,6 +1,6 @@
 {
   "name": "kemra102-ius",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Danny Roberts",
   "license": "BSD-2-Clause",
   "summary": "Module for managing IUS Community repo.",
