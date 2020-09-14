@@ -98,10 +98,14 @@ class ius (
 
   $epel_class                           = $ius::params::epel_class,
 
+  $gpg_key_source                       = $ius::params::gpg_key_source,
+  $gpg_key_filename                     = $ius::params::gpg_key_filename,
+  $gpg_key_fullpath                     = $ius::params::gpg_key_fullpath,
+
 ) inherits ius::params {
 
   if $::osfamily == 'RedHat' and $::operatingsystem =~ /RedHat|CentOS/ {
-    
+
     include $epel_class
 
     yumrepo { 'ius':
@@ -111,7 +115,7 @@ class ius (
       proxy          => $ius_proxy,
       enabled        => $ius_enabled,
       gpgcheck       => $ius_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
       includepkgs    => $ius_includepkgs,
       exclude        => $ius_exclude,
@@ -124,7 +128,7 @@ class ius (
       proxy          => $ius_debuginfo_proxy,
       enabled        => $ius_debuginfo_enabled,
       gpgcheck       => $ius_debuginfo_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Debug",
       includepkgs    => $ius_includepkgs,
       exclude        => $ius_exclude,
@@ -137,7 +141,7 @@ class ius (
       proxy          => $ius_source_proxy,
       enabled        => $ius_source_enabled,
       gpgcheck       => $ius_source_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch",
       includepkgs    => $ius_includepkgs,
       exclude        => $ius_exclude,
@@ -150,7 +154,7 @@ class ius (
       proxy          => $ius_archive_proxy,
       enabled        => $ius_archive_enabled,
       gpgcheck       => $ius_archive_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Archive",
       includepkgs    => $ius_archive_includepkgs,
       exclude        => $ius_archive_exclude,
@@ -163,7 +167,7 @@ class ius (
       proxy          => $ius_archive_debuginfo_proxy,
       enabled        => $ius_archive_debuginfo_enabled,
       gpgcheck       => $ius_archive_debuginfo_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Archive Debug",
       includepkgs    => $ius_archive_includepkgs,
       exclude        => $ius_archive_exclude,
@@ -176,7 +180,7 @@ class ius (
       proxy          => $ius_archive_source_proxy,
       enabled        => $ius_archive_source_enabled,
       gpgcheck       => $ius_archive_source_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Archive Source",
       includepkgs    => $ius_archive_includepkgs,
       exclude        => $ius_archive_exclude,
@@ -189,7 +193,7 @@ class ius (
       proxy          => $ius_dev_proxy,
       enabled        => $ius_dev_enabled,
       gpgcheck       => $ius_dev_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Dev",
       includepkgs    => $ius_dev_includepkgs,
       exclude        => $ius_dev_exclude,
@@ -202,7 +206,7 @@ class ius (
       proxy          => $ius_dev_debuginfo_proxy,
       enabled        => $ius_dev_debuginfo_enabled,
       gpgcheck       => $ius_dev_debuginfo_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Dev Debug",
       includepkgs    => $ius_dev_includepkgs,
       exclude        => $ius_dev_exclude,
@@ -214,7 +218,7 @@ class ius (
       proxy          => $ius_dev_source_proxy,
       enabled        => $ius_dev_source_enabled,
       gpgcheck       => $ius_dev_source_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Dev Source",
       includepkgs    => $ius_dev_includepkgs,
       exclude        => $ius_dev_exclude,
@@ -227,7 +231,7 @@ class ius (
       proxy          => $ius_testing_proxy,
       enabled        => $ius_testing_enabled,
       gpgcheck       => $ius_testing_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Testing",
       includepkgs    => $ius_testing_includepkgs,
       exclude        => $ius_testing_exclude,
@@ -240,7 +244,7 @@ class ius (
       proxy          => $ius_testing_debuginfo_proxy,
       enabled        => $ius_testing_debuginfo_enabled,
       gpgcheck       => $ius_testing_debuginfo_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Testing Debug",
       includepkgs    => $ius_testing_includepkgs,
       exclude        => $ius_testing_exclude,
@@ -253,22 +257,22 @@ class ius (
       proxy          => $ius_testing_source_proxy,
       enabled        => $ius_testing_source_enabled,
       gpgcheck       => $ius_testing_source_gpgcheck,
-      gpgkey         => 'file:///etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+      gpgkey         => "file://${gpg_key_fullpath}",
       descr          => "IUS Community Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Testing Source",
       includepkgs    => $ius_testing_includepkgs,
       exclude        => $ius_testing_exclude,
     }
 
-    file { '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY':
+    file { $gpg_key_fullpath:
       ensure => present,
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/ius/IUS-COMMUNITY-GPG-KEY',
+      source => $gpg_key_source,
     }
 
-    ius::rpm_gpg_key{ 'IUS-COMMUNITY-GPG-KEY':
-      path   => '/etc/pki/rpm-gpg/IUS-COMMUNITY-GPG-KEY',
+    ius::rpm_gpg_key{ $gpg_key_filename:
+      path   => $gpg_key_fullpath,
       before => Yumrepo['ius', 'ius-debuginfo', 'ius-source', 'ius-archive', 'ius-archive-debuginfo', 'ius-archive-source', 'ius-dev', 'ius-dev-debuginfo', 'ius-dev-source', 'ius-testing', 'ius-testing-debuginfo', 'ius-testing-source'],
     }
   } else {
