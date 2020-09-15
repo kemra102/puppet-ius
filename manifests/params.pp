@@ -105,4 +105,7 @@ class ius::params {
 
   $epel_class                           = ::epel
 
+  $gpg_key_source                       = "https://repo.ius.io/RPM-GPG-KEY-IUS-${::operatingsystemmajrelease}"
+  $gpg_key_filename                     = "RPM-GPG-KEY-IUS-${::operatingsystemmajrelease}"
+  $gpg_key_fullpath                     = "/etc/pki/rpm-gpg/${gpg_key_filename}"
 }
